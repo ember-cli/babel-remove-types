@@ -1,11 +1,14 @@
 {
-  "name": "remove-types",
-  "author": "Chris Freeman",
-  "version": "1.0.0",
+  "name": "babel-remove-types",
+  "contributors": [
+    "Chris Freeman",
+    "Chris Manson <chris@manson.ie>"
+  ],
+  "version": "0.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cafreeman/remove-types"
+    "url": "https://github.com/ember-cli/babel-remove-types"
   },
   "keywords": [
     "typescript",
@@ -28,18 +31,20 @@
     "ts:cjs": "tsc -p ts/cjs.tsconfig.json",
     "ts:esm": "tsc -p ts/esm.tsconfig.json",
     "ts:typedefs": "tsc -p ts/types.tsconfig.json && mv defs/* . && rimraf defs",
-    "ts:all": "yarn ts:esm && yarn ts:cjs && yarn ts:typedefs",
-    "build": "yarn clean && yarn ts:all",
+    "ts:all": "pnpm ts:esm && pnpm ts:cjs && pnpm ts:typedefs",
+    "build": "pnpm clean && pnpm ts:all",
     "clean": "rimraf ./*.d.ts ./*.d.ts.map ./dist",
     "lint": "eslint src test",
-    "prepublishOnly": "yarn test && yarn build",
-    "postpublish": "yarn clean",
+    "prepublishOnly": "pnpm test && pnpm build",
+    "prepare": "pnpm build",
+    "postpublish": "pnpm clean",
     "release": "release-it",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@types/babel__core": "^7.1.18",
+    "@types/babel__traverse": "^7.20.6",
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
@@ -60,5 +65,6 @@
   },
   "release-it": {
     "github": true
-  }
+  },
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
 }

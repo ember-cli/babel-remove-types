@@ -1,11 +1,14 @@
-# `remove-types`
+# `babel-remove-types`
+
+> [!NOTE]
+> This is a fork of https://github.com/cafreeman/remove-types. It's not marked as a fork because we want pull requests to target this repo and not "upstream".
 
 A small library for transforming TypeScript code into JavaScript code in the least destructive way possible. This library exports a single function whose purpose is to preserve everything else about the code except for the actual TypeScript syntax itself. As a result, things like decorators and class fields should pass straight through without being transformed in any way.
 
 ## Usage
 
 ```js
-import { removeTypes } from 'remove-types';
+import { removeTypes } from 'babel-remove-types';
 
 const original = `
 type AnimalType = 'cat' | 'dog';
