@@ -1,0 +1,25 @@
+{
+  "solution": {
+    "babel-remove-types": {
+      "impact": "major",
+      "oldVersion": "0.0.0",
+      "newVersion": "1.0.0",
+      "constraints": [
+        {
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2024-09-27)\n\nbabel-remove-types 1.0.0 (major)\n\n#### :boom: Breaking Change\n* `babel-remove-types`\n  * [#1](https://github.com/ember-cli/babel-remove-types/pull/1) Fork the library ([@mansona](https://github.com/mansona))\n\n#### :bug: Bug Fix\n* `babel-remove-types`\n  * [#4](https://github.com/ember-cli/babel-remove-types/pull/4) avoid clashing with local babel config file ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `babel-remove-types`\n  * [#2](https://github.com/ember-cli/babel-remove-types/pull/2) start using release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+}
