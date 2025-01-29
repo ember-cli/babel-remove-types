@@ -126,4 +126,17 @@ export default class Foo extends Component {
 `;
     expect(await removeTypes(contents)).toEqual(expected);
   });
+
+  it("doesn't remove unused imports", async () => {
+    const contents = `import Foo from 'foo';
+
+export default class Baz {}
+`;
+
+    const expected = `import Foo from 'foo';
+
+export default class Baz {}
+`;
+    expect(await removeTypes(contents)).toEqual(expected);
+  });
 });
