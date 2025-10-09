@@ -139,4 +139,32 @@ export default class Baz {}
 `;
     expect(await removeTypes(contents)).toEqual(expected);
   });
+
+  it('removes declared properties', async () => {
+    const contents = `export default class Baz {
+  declare foo: string;
+}
+`;
+
+    const expected = `export default class Baz {}
+`;
+
+    expect(await removeTypes(contents)).toEqual(expected);
+  });
+
+  it('keeps declared properties with decorators', async () => {
+    const contents = `export default class Baz {
+  @service
+  declare foo: string;
+}
+`;
+
+    const expected = `export default class Baz {
+  @service
+  foo;
+}
+`;
+
+    expect(await removeTypes(contents)).toEqual(expected);
+  });
 });

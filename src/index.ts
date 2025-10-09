@@ -4,7 +4,10 @@ import { format, Options as PrettierOptions } from 'prettier';
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
 import bts from '@babel/plugin-transform-typescript';
-const babelTsTransform = createConfigItem([bts, { onlyRemoveTypeImports: true }]);
+const babelTsTransform = createConfigItem([
+  bts,
+  { allowDeclareFields: true, onlyRemoveTypeImports: true },
+]);
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
 import bsd from '@babel/plugin-syntax-decorators';
