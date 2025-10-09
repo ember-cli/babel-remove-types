@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-10-09)
+
+babel-remove-types 1.0.2 (patch)
+
+#### :bug: Bug Fix
+* `babel-remove-types`
+  * [#7](https://github.com/ember-cli/babel-remove-types/pull/7) feat: Allow declared fields ([@TSenter](https://github.com/TSenter))
+
+#### Committers: 1
+- Tyler Senter ([@TSenter](https://github.com/TSenter))
+
 ## Release (2025-01-29)
 
 babel-remove-types 1.0.1 (patch)

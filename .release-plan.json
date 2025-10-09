@@ -2,8 +2,8 @@
   "solution": {
     "babel-remove-types": {
       "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
+      "oldVersion": "1.0.1",
+      "newVersion": "1.0.2",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-01-29)\n\nbabel-remove-types 1.0.1 (patch)\n\n#### :bug: Bug Fix\n* `babel-remove-types`\n  * [#5](https://github.com/ember-cli/babel-remove-types/pull/5) Only remove type imports ([@Windvis](https://github.com/Windvis))\n\n#### Committers: 1\n- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))\n"
+  "description": "## Release (2025-10-09)\n\nbabel-remove-types 1.0.2 (patch)\n\n#### :bug: Bug Fix\n* `babel-remove-types`\n  * [#7](https://github.com/ember-cli/babel-remove-types/pull/7) feat: Allow declared fields ([@TSenter](https://github.com/TSenter))\n\n#### Committers: 1\n- Tyler Senter ([@TSenter](https://github.com/TSenter))\n"
 }
