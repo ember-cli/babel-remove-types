@@ -44,6 +44,21 @@ jobs:
       - run: pnpm i --frozen-lockfile
       - run: pnpm test
 
+  test-babel-8:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: pnpm
+      - run: pnpm i
+      - run: pnpm i @babel/core@^8.0.0-0 @babel/plugin-syntax-decorators@^8.0.0-0 @babel/plugin-transform-typescript@^8.0.0-0 --save
+      - run: pnpm test
+
   floating:
     runs-on: ubuntu-latest
     timeout-minutes: 10
