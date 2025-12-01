@@ -1,17 +1,18 @@
-import { transformAsync, createConfigItem } from '@babel/core';
+// @ts-expect-error Type definitions don't know about createConfigItemSync
+import { transformAsync, createConfigItemSync } from '@babel/core';
 import type { VisitNodeObject, Node } from '@babel/traverse';
 import { format, Options as PrettierOptions } from 'prettier';
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
 import bts from '@babel/plugin-transform-typescript';
-const babelTsTransform = createConfigItem([
+const babelTsTransform = createConfigItemSync([
   bts,
   { allowDeclareFields: true, onlyRemoveTypeImports: true },
 ]);
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
 import bsd from '@babel/plugin-syntax-decorators';
-const babelDecoratorSyntax = createConfigItem([bsd, { legacy: true }]);
+const babelDecoratorSyntax = createConfigItemSync([bsd, { version: 'legacy' }]);
 
 export async function removeTypes(code: string, prettierConfig: PrettierOptions | boolean = true) {
   // Babel collapses newlines all over the place, which messes with the formatting of almost any
