@@ -1,7 +1,7 @@
 // @ts-expect-error Type definitions don't know about createConfigItemSync
 import { transformAsync, createConfigItemSync } from '@babel/core';
 import type { VisitNodeObject, Node } from '@babel/traverse';
-import { format, Options as PrettierOptions } from 'prettier';
+import { format, type Options as PrettierOptions } from 'prettier';
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
 import bts from '@babel/plugin-transform-typescript';
