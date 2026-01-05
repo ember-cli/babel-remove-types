@@ -1,3 +1,5 @@
+// @ts-expect-error: We cannot enable allowImportingTsExtensions
+// because our TS version does not support it
 import { removeTypes } from '../src/index.ts';
 
 describe('removeTypes', () => {
