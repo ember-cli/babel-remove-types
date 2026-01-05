@@ -1,6 +1,5 @@
 // @ts-expect-error Type definitions don't know about createConfigItemSync
-import { transformAsync, createConfigItemSync } from '@babel/core';
-import type { VisitNodeObject, Node } from '@babel/traverse';
+import { transformAsync, createConfigItemSync, type PluginItem, type Visitor } from '@babel/core';
 import { format, type Options as PrettierOptions } from 'prettier';
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
@@ -8,11 +7,11 @@ import bts from '@babel/plugin-transform-typescript';
 const babelTsTransform = createConfigItemSync([
   bts,
   { allowDeclareFields: true, onlyRemoveTypeImports: true },
-]);
+] as PluginItem);
 
 // @ts-expect-error We're only importing so we can create a config item, so we don't care about types
 import bsd from '@babel/plugin-syntax-decorators';
-const babelDecoratorSyntax = createConfigItemSync([bsd, { version: 'legacy' }]);
+const babelDecoratorSyntax = createConfigItemSync([bsd, { version: 'legacy' }] as PluginItem);
 
 export async function removeTypes(code: string, prettierConfig: PrettierOptions | boolean = true) {
   // Babel collapses newlines all over the place, which messes with the formatting of almost any
@@ -26,7 +25,7 @@ export async function removeTypes(code: string, prettierConfig: PrettierOptions 
   // any comments that are associated with those constructs, since otherwise we'll be left with
   // comments that refer to something that isn't actually there.
   // Credit to https://github.com/cyco130/detype for figuring out this very useful pattern
-  const removeComments: VisitNodeObject<unknown, Node> = {
+  const removeComments: Visitor<unknown> = {
     enter(nodePath) {
       if (!nodePath.node.leadingComments) return;
 
@@ -48,7 +47,7 @@ export async function removeTypes(code: string, prettierConfig: PrettierOptions 
 
   const transformed = await transformAsync(code, {
     plugins: [
-      {
+      () => ({
         name: 'comment-remover',
         visitor: {
           TSTypeAliasDeclaration: removeComments,
@@ -58,13 +57,13 @@ export async function removeTypes(code: string, prettierConfig: PrettierOptions 
           TSImportType: removeComments,
           TSModuleDeclaration: removeComments,
         },
-      },
+      }),
       babelTsTransform,
       babelDecoratorSyntax,
     ],
     generatorOpts: {
       retainLines: true,
-      shouldPrintComment: (comment) => comment !== '___REMOVE_ME___',
+      shouldPrintComment: (comment: string) => comment !== '___REMOVE_ME___',
     },
     configFile: false,
   });
