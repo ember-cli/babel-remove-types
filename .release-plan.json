@@ -1,17 +1,17 @@
 {
   "solution": {
     "babel-remove-types": {
-      "impact": "patch",
-      "oldVersion": "1.0.1",
-      "newVersion": "1.0.2",
+      "impact": "minor",
+      "oldVersion": "1.0.2",
+      "newVersion": "1.1.0",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-10-09)\n\nbabel-remove-types 1.0.2 (patch)\n\n#### :bug: Bug Fix\n* `babel-remove-types`\n  * [#7](https://github.com/ember-cli/babel-remove-types/pull/7) feat: Allow declared fields ([@TSenter](https://github.com/TSenter))\n\n#### Committers: 1\n- Tyler Senter ([@TSenter](https://github.com/TSenter))\n"
+  "description": "## Release (2026-01-05)\n\nbabel-remove-types 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `babel-remove-types`\n  * [#10](https://github.com/ember-cli/babel-remove-types/pull/10) Babel 8 compatibility ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))\n\n#### Committers: 1\n- Nicolò Ribaudo ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))\n"
 }

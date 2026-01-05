@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-01-05)
+
+babel-remove-types 1.1.0 (minor)
+
+#### :rocket: Enhancement
+* `babel-remove-types`
+  * [#10](https://github.com/ember-cli/babel-remove-types/pull/10) Babel 8 compatibility ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))
+
+#### Committers: 1
+- Nicolò Ribaudo ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))
+
 ## Release (2025-10-09)
 
 babel-remove-types 1.0.2 (patch)
