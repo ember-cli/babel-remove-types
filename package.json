@@ -54,6 +54,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7",
+    "jest-light-runner": "^0.7.10",
     "release-plan": "^0.9.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.1.3",
