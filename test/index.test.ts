@@ -170,4 +170,39 @@ export default class Baz {}
 
     expect(await removeTypes(contents)).toEqual(expected);
   });
+
+  it('does not remove trailing comments', async () => {
+    expect(
+      await removeTypes(`import loadConfigFromMeta from '@embroider/config-meta-loader';
+import { assert } from '@ember/debug';
+
+const config = loadConfigFromMeta('<%= name %>') as unknown;
+
+assert(
+  'config is not an object',
+  typeof config === 'object' && config !== null,
+);
+
+export default config as {
+  modulePrefix: string;
+  podModulePrefix?: string;
+  locationType: string;
+  rootURL: string;
+  APP: Record<string, unknown>;
+} & Record<string, unknown>;`)
+    ).toMatchInlineSnapshot(`
+      "import loadConfigFromMeta from '@embroider/config-meta-loader';
+      import { assert } from '@ember/debug';
+
+      const config = loadConfigFromMeta('<%= name %>');
+
+      assert(
+        'config is not an object',
+        typeof config === 'object' && config !== null,
+      );
+
+      export default config;
+      "
+    `);
+  });
 });
