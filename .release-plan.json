@@ -1,17 +1,22 @@
 {
   "solution": {
     "babel-remove-types": {
-      "impact": "minor",
-      "oldVersion": "1.0.2",
-      "newVersion": "1.1.0",
+      "impact": "major",
+      "oldVersion": "1.1.0",
+      "newVersion": "2.0.0",
+      "tagName": "latest",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-01-05)\n\nbabel-remove-types 1.1.0 (minor)\n\n#### :rocket: Enhancement\n* `babel-remove-types`\n  * [#10](https://github.com/ember-cli/babel-remove-types/pull/10) Babel 8 compatibility ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))\n\n#### Committers: 1\n- Nicolò Ribaudo ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))\n"
+  "description": "## Release (2026-03-20)\n\n* babel-remove-types 2.0.0 (major)\n\n#### :boom: Breaking Change\n* `babel-remove-types`\n  * [#16](https://github.com/ember-cli/babel-remove-types/pull/16) drop support for Node < 20.19.x and convert to ESM only ([@mansona](https://github.com/mansona))\n  * [#14](https://github.com/ember-cli/babel-remove-types/pull/14) update prettier and add a test to show trailing commas are preserved ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `babel-remove-types`\n  * [#15](https://github.com/ember-cli/babel-remove-types/pull/15) update release-plan ([@mansona](https://github.com/mansona))\n  * [#13](https://github.com/ember-cli/babel-remove-types/pull/13) move to vitest ([@mansona](https://github.com/mansona))\n  * [#9](https://github.com/ember-cli/babel-remove-types/pull/9) Test Babel 8 compatibility ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))\n\n#### Committers: 2\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Nicolò Ribaudo ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))\n"
 }

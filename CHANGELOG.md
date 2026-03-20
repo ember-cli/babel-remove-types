@@ -1,5 +1,24 @@
 # Changelog
 
+## Release (2026-03-20)
+
+* babel-remove-types 2.0.0 (major)
+
+#### :boom: Breaking Change
+* `babel-remove-types`
+  * [#16](https://github.com/ember-cli/babel-remove-types/pull/16) drop support for Node < 20.19.x and convert to ESM only ([@mansona](https://github.com/mansona))
+  * [#14](https://github.com/ember-cli/babel-remove-types/pull/14) update prettier and add a test to show trailing commas are preserved ([@mansona](https://github.com/mansona))
+
+#### :house: Internal
+* `babel-remove-types`
+  * [#15](https://github.com/ember-cli/babel-remove-types/pull/15) update release-plan ([@mansona](https://github.com/mansona))
+  * [#13](https://github.com/ember-cli/babel-remove-types/pull/13) move to vitest ([@mansona](https://github.com/mansona))
+  * [#9](https://github.com/ember-cli/babel-remove-types/pull/9) Test Babel 8 compatibility ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))
+
+#### Committers: 2
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Nicolò Ribaudo ([@nicolo-ribaudo](https://github.com/nicolo-ribaudo))
+
 ## Release (2026-01-05)
 
 babel-remove-types 1.1.0 (minor)
